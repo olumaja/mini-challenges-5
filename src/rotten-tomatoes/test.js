@@ -1,4 +1,4 @@
-const rottenTomatoes = require(".");
+const getMinutes = require(".");
 
 describe("Rotten Tomatoes", () => {
   test("1", () => {
@@ -8,7 +8,7 @@ describe("Rotten Tomatoes", () => {
       [0, 1, 1],
     ];
 
-    expect(rottenTomatoes(grid)).toBe(4);
+    expect(getMinutes(grid)).toBe(4);
   });
 
   test("2", () => {
@@ -18,13 +18,13 @@ describe("Rotten Tomatoes", () => {
       [1, 0, 1],
     ];
 
-    expect(rottenTomatoes(grid)).toBe(-1);
+    expect(getMinutes(grid)).toBe(-1);
   });
 
   test("3", () => {
     const grid = [[0, 2]];
 
-    expect(rottenTomatoes(grid)).toBe(0);
+    expect(getMinutes(grid)).toBe(0);
   });
 
   test("4", () => {
@@ -40,7 +40,7 @@ describe("Rotten Tomatoes", () => {
       [0, 1, 1],
     ];
 
-    expect(rottenTomatoes(grid)).toBe(8);
+    expect(getMinutes(grid)).toBe(8);
   });
 
   test("5", () => {
