@@ -1,10 +1,10 @@
 function rottenTomatoes(grid) {
 
+  //This challenge was solve using breadth first search algorithm
   let rottenTime = 0;
   let tomatoesConverted = 0;
   let visitedArray = [];
   let queueArray = [];
-  let totalRotten = 0;
   let totalFresh = 0;
   let rottenLocation = [];
   let arrayAdjacent;
@@ -17,7 +17,7 @@ function rottenTomatoes(grid) {
     for(let k = 0; k < maxColumn; k++){
 
       if(grid[j][k] === 2){
-        totalRotten++;
+
         rottenLocation.push([j, k]);
         visitedArray.push([j, k]);
 
@@ -76,10 +76,6 @@ else if(tomatoesConverted === totalFresh){
   return rottenTime;
 }
 
-
-
-
-
   function adjacent(sizeRow, sizeCol, coordinate){
     const [row, column] = coordinate;
     const topAdjacent = row === 0 ? false : [row - 1, column];
@@ -133,19 +129,4 @@ else if(tomatoesConverted === totalFresh){
 
 }
 
-const grid = [
-  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1],
-];
-
-rottenTomatoes(grid);
 module.exports = rottenTomatoes;
